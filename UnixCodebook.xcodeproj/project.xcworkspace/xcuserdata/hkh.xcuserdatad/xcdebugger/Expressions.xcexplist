@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "UnixCodebook.CmdDetailViewController.viewDidLoad (UnixCodebook.CmdDetailViewController)() -&gt; ():CmdDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "data?.objectForKey(&quot;cmd&quot;) as? String">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UnixCodebook.ViewController.viewDidLoad (UnixCodebook.ViewController)() -&gt; ():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cmdData">
+            </PersistentString>
+            <PersistentString
+               value = "cmdData.at(0)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
