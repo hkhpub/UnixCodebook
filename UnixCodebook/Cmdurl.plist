@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>cmd</key>
+		<string>pwd</string>
+		<key>desc</key>
+		<string>pwd 명령어(print working directory)를 사용하여 현재 작업 디렉토리의 절대 경로를 출력한다.</string>
+		<key>syntax</key>
+		<string>pwd</string>
+		<key>example</key>
+		<string>% pwd
+            /home/student1</string>
+	</dict>
+	<dict>
+		<key>cmd</key>
+		<string>cmd</string>
+		<key>desc</key>
+		<string>cd [디렉토리 이름]을 사용하여 새로운 작업 디렉토리를 변경한다. cd명령은 절대경로나 상대경로를 취할 수 있다.</string>
+		<key>syntax</key>
+		<string>cd [ 디렉토리 이름 ]</string>
+		<key>example</key>
+		<string>절대경로의 사용예:
+            % cd /home/student1/dir2
+            상대경로의 사용예:
+            % cd beans
+            
+            상대경로의 사용예:
+            % cd dir2/flowers
+            
+            cd 명령을 디렉토리 이름 지정없이 사용하면 사용자홈 디렉토리로 이동한다. 
+            % cd</string>
+	</dict>
+	<dict>
+		<key>cmd</key>
+		<string>ls</string>
+		<key>desc</key>
+		<string>ls 명령어를 사용하여 디렉토리의 내용을 확인한다.</string>
+		<key>syntax</key>
+		<string>ls [-algsF][경로이름]</string>
+		<key>example</key>
+		<string>% cd
+% pwd 
+/home/student1
+
+% ls 
+dir1 dir2 dir3 dir4
+
+% ls dir1 
+coffee fruit trees
+
+% ls /var/mail 
+saved root quest student1</string>
+	</dict>
+	<dict>
+		<key>cmd</key>
+		<string>mkdir</string>
+		<key>desc</key>
+		<string>mkdir 명령은 디렉토리를 생성하는 데 사용된다.</string>
+		<key>syntax</key>
+		<string>mkdir 디렉토리 [디렉토리들]</string>
+		<key>example</key>
+		<string>① 현재 디렉토리 아래 디렉토리를 만든다.
+% pwd 
+/home/student1
+
+% mkdir reports
+
+% ls -F 
+bigfile dir2/ dir4/ file2 
+reports/ dir1/ dir3/ file1 
+file3
+
+② 상대경로 이름을 사용한 디렉토리 생성
+
+% mkdir reports/weekly
+
+% ls -F reports 
+weekly/
+
+③ 절대경로 이름을 사용한 디렉토리 생성
+
+% mkdir /tmp/games
+
+% ls -F /tmp 
+games/
+
+디렉토리를 생성하기 위해서는 적절한 허가상태를 가져야 한다. 허가상태에 대한 내용은 나중에 설명하기로 한다. 만일 어떤 파일이나 디렉토리에 대해 적절한 허가 상태를 가지지 못한 경우 다음과 같은 메시지가 출력된다.
+
+% mkdir /home/games 
+mkdir : Failed to make directory &quot;games&quot;: Permission denied</string>
+	</dict>
+	<dict>
+		<key>cmd</key>
+		<string>pwd</string>
+		<key>desc</key>
+		<string>rm과 rmdir 명령을 사용하여 디렉토리를 삭제한다.</string>
+		<key>syntax</key>
+		<string>rmdir [ - 옵션 ] 파일이름(들) rm [ -옵션 ] 파일이름(들)</string>
+		<key>example</key>
+		<string>rmdir 명령은 빈 디렉토리를 삭제한다. 
+% rmdir /tmp/games
+만일 비어 있지 않은 디렉토리를 rmdir로 삭제할 경우, 명령은 실행되지 않는다. 
+% rmdir dir2 
+rmdir : dir2 : Directory not empty
+
+비어 있지 않은 디렉토리를 삭제하려면 -r 옵션을 사용한다. 
+% pwd 
+/home/student1
+
+% rm -r reports
+% rmdir /tmp/games
+만일 비어 있지 않은 디렉토리를 rmdir로 삭제할 경우, 명령은 실행되지 않는다. 
+% rmdir dir2 
+rmdir : dir2 : Directory not empty
+
+비어 있지 않은 디렉토리를 삭제하려면 -r 옵션을 사용한다. 
+% pwd 
+/home/student1
+
+% rm -r reports
+주의 : -r 옵션만 사용하는 것은 파일과 디렉토리 전체를 삭제 하므로 위험이 있다. 이를 방지하기 위해 -ri옵션을 사용한다. -i 옵션은 디랙토리와 그 모든 내용이 삭제되기전 y/n로 확인한다.</string>
+	</dict>
+	<dict>
+		<key>cmd</key>
+		<string>date</string>
+		<key>desc</key>
+		<string>시스템의 시간을 보거나 시간을 설정한다. 단, 시스템의 시간을 설정하는것은 시스템관리자만이 할 수 있다.</string>
+		<key>syntax</key>
+		<string>% date [+format]</string>
+		<key>example</key>
+		<string>% date 
+Mon Feb 5 16:35:43 KST 1996
+% date &apos;+DATE: %m/%d/%y%nTIME:%H:%M:%S&apos; 
+DATE: 02/12/96 
+TIME: 16:38:27</string>
+	</dict>
+	<dict>
+		<key>cmd</key>
+		<string>cal</string>
+		<key>desc</key>
+		<string>달력을 보여준다.</string>
+		<key>syntax</key>
+		<string>% cal [ [month] year ]</string>
+		<key>example</key>
+		<string>% cal 
+     February  1996
+S   M  Tu   W  Th   F   S
+         1   2   3
+4   5   6   7   8   9  10
+11  12  13  14  15  16  17
+18  19  20  21  22  23  24
+25  26  27  28  29
+% cal 1996 
+1996년도 calendar가 출력됨
+% cal 12 1995 
+1995년 12월 calendar가 출력됨</string>
+	</dict>
+	<dict>
+		<key>cmd</key>
+		<string>ps</string>
+		<key>desc</key>
+		<string>터미널에서 사용중인 프로세스의 목록을 보려면 ps만 입력하면 된다. 
+(어느 UNIX에서나 공통사항임)</string>
+		<key>syntax</key>
+		<string>ps -option process_number kernel-name</string>
+		<key>example</key>
+		<string>ps 명령어로 알수 있는 것들 (Berkley계열 UNIX는 다를 수도 있음)
+helpdesk:/user/assist/help &gt; ps
+
+    PID                 TTY             TIME            COMMAND
+   12342               ttyp0            0:01              csh
+   12343               ttyp1            0:00              ps
+     ^                   ^                ^                ^
+     |                   |                |                |
+process ID           프로세스가   프로세스를    프로세스를
+UNIX식별기호      시작된         실행하는데    시작한 
+로 프로세스에    터미널         걸린시간      명령어
+고유번호제공              
+helpdesk:/user/assist/help &gt; ps -f
+UID        PID       PPID      C          STIME       TTY       TIME     COMMAND
+help      12345      3812      0        10:01:03     ttpy3      0:00     /usr/bin/emacs
+help      12346     12345      0        10:01:05     ttpy3      0:00     /bin/sh -r
+help      11769     12346     10        10:01:11     ttpy3      0:00     ps -f
+help       3812      3804      0        10:00:00     ttpy3      0:00     -sh
+ ^           ^         ^       ^            ^          ^                   ^
+ |           |         |       |            |          |                   |
+사용자  Process   Parent  최근에  시작시간   사용된             login shell
+이름      ID       ID      process                터미널이름
+(User ID)                  가 실행된
+                           횟수
+% ps -arux
+-a : 다른 사용자에 의해서 소유된 process들을 포함 
+-r : 출력을 실행중인 프로세서들로 제한 
+-u : 각 prcess의 소유자를 포함하는 긴 출력을 생성 
+-x : 제어 터미널을 갖지 않는 프로세서들을 포함</string>
+	</dict>
+	<dict>
+		<key>cmd</key>
+		<string>kill</string>
+		<key>desc</key>
+		<string>특정 process에 대해서 signal을 보내거나 중지시키는 명령어이다.</string>
+		<key>syntax</key>
+		<string>% kill [ -signal ] pid</string>
+		<key>example</key>
+		<string>% ps 
+PID  TT  STAT  TIME  COMMAND
+1247  co  IW  0:00  /bin/sh /usr/openwin/bin/openwin -noauth
+1249  co  IW  0:00  /usr/openwin/bin/xinit --/usr/openwin/bin/xnews:0
+1250  co  S   6:58  /usr/openwin/bin/xnews :0
+1257  co  IW  0:00  sh /user/assist/yangyh/.xinitrc
+1263  co  S   0:00  olwm -3
+1273  co  IW  0:00  olwmslave
+1274  co  I    0:00  /usr/openwin/bin/xterm
+1321  co  IW  0:00  /usr/openwin/bin/xterm
+1683  p0  S   0:00  -csh (csh)
+1712  p0  R   0:00   ps
+1271  p1  IW  0:00  -csh (csh)
+1275  p2  I    0:00  -csh (csh)
+1578  p2  S  65:41   /cad/HWPX-3.0/bin/hwp_sunos
+1710  p2  I    0:00  vi aaa
+1322  p3  IW  0:00  -csh (csh)
+% kill 1710 
+kill 명령어로 보낼수 있는 signal은 16가지 (0 - 15)이고, 중요한 것은 다음과 같다.
+-0 (HUP) : Process를 reset 시킨다. 
+-9 : Sub process에 관계없이 process를 중지시킨다.</string>
+	</dict>
+	<dict>
+		<key>cmd</key>
+		<string>who</string>
+		<key>desc</key>
+		<string>시스템에 login한 사용자를 보여준다.</string>
+		<key>syntax</key>
+		<string>% who [ am i ]</string>
+		<key>example</key>
+		<string>% who
+yangyh  console  Jan 23  11:32
+yangyh   ttyp0   Jan 23  11:32  (:0.0)
+yangyh   ttyp1   Jan 23  11:32  (:0.0)
+yangyh   ttyp2   Jan 23  11:32  (:0.0)
+yangyh   ttyp3   Jan 23  11:39  (:0.0)
+% who am i
+edumaster!std01  ttyp0  Feb 6  11:25   (:0.0)</string>
+	</dict>
+	<dict>
+		<key>cmd</key>
+		<string>w</string>
+		<key>desc</key>
+		<string>시스템에 login한 사용자와 작업내용을 보여준다.</string>
+		<key>syntax</key>
+		<string>% w  -hls  user</string>
+		<key>example</key>
+		<string>% w
+7:51pm   up 9 days,   7:54   12 users,   load average:  1.25, 1.10, 0.86
+User    tty      login@     idle      JCPU   PCPU     what
+gmcad   ttyp0    10:56am    5:27        4             -csh
+leesk   ttyp1    Sun 4pm    2days                     -csh
+chagu   ttyp2    6:01pm     1:45                      rlogin mcu20
+chosi   ttyp3    7:06pm     4          26      1      -csh
+root    ttyp4    Sun 6pm    2:56       42             -csh
+chosi   ttyp5    7:21pm     12         14             -csh
+kimjw   ttyp8    Mon 8am    29       5:44      1      -csh
+kimsb   ttyp9    8:14am     11:37                      vi mbox
+kimjw   ttypd    2:59pm     4:48                      -csh
+kimsb   ttyq6    5:20pm     2:26                      -csh
+gmcad   ttyq7    11:28am    6:04     1:55      2      vi DRCPRT.drc
+help    ttyr1    Mon 5pm    9:01     1:26             -csh
+help란 user의 작업내용을 보려면,
+% w help
+7:51pm   up 8 days,    9:25   15 users,   load average: 0.08, 0.37, 0.14
+User   tty      login@     idle    JCPU     PCPU   what
+help   ttyp8    Mon 8am    29      5:44       1    -csh
+help   ttypd    2:59pm     4:48                    -csh</string>
+	</dict>
+	<dict>
+		<key>cmd</key>
+		<string>df</string>
+		<key>desc</key>
+		<string>File system에서 free space를 보여준다.</string>
+		<key>syntax</key>
+		<string>% df [ -a ] [ -i ] [ -t type ] [ filesystem ... ]</string>
+		<key>example</key>
+		<string>% df
+Filesyatem             kbytes     used    avail   capacity  Mounted on
+/dev/sd0a               14127     6743     5972     53%       /
+/dev/sd0g              807590   168223   558608     23%       /usr
+chrock:/cad           1952573  1553233   204083     88%       /cad
+bobae:/cad/HWPX-3.0   1952573  1610248   147068     92%    /tmp_mnt/cad/HWPX-3.0
+% df -i
+Filesyatem             iused    ifree   %iused   Mounted on
+/dev/sd0a               1163     6389    15%       /
+/dev/sd0g              12995   391037     3%       /usr
+chrock:/cad              *        *       *        /cad
+bobae:/cad/HWPX-3.0      *        *       *        /tmp_mnt/cad/HWPX-3.0</string>
+	</dict>
+	<dict>
+		<key>cmd</key>
+		<string>du</string>
+		<key>desc</key>
+		<string>각 directory나 file에 의해 사용된 디스크의 block수를 보여준다.</string>
+		<key>syntax</key>
+		<string>% du [ -s ] [ -a ] [  filename ...  ]</string>
+		<key>example</key>
+		<string>% du /tmp
+1    /tmp/.NeWS-unix
+1    /tmp/.X11-unix
+1650    /tmp
+% du -s /user
+722   engr2
+주 의 : SUN  OS를 사용하고 있는 경우 du 결과의 단위는 kbytes이고, IBM OS를 사용하고 있는 경우는 512  bytes 단위의 Block 수이다.</string>
+	</dict>
+</array>
+</plist>
